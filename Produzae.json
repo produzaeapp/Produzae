@@ -1,0 +1,514 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated_at": "2026-05-18",
+    "description": "Conteúdo dinâmico do app Produzaê. Edite este arquivo para atualizar o app sem precisar de um novo APK."
+  },
+
+  "theory": {
+    "intro": {
+      "title": "Introdução",
+      "theory_html": "<b>Estruturando a sua redação</b><br><br><b>• Introdução</b><br><br><b>1. Estratégia de contextualização</b><br>(Dados estatísticos, citação de autoridade, oposição ao senso comum, sequência de frases nominais, linguagem figurativa, flash narrativo e subdivisão de fatores);<br><br><b>2. Relação com tema:</b> Análogo a obra/ficção, Todavia, Entretanto, Apesar de ficcional(...) tal realidade permanece no Brasil hodierno — colocar a frase temática<br><br><b>3. Tese</b> (2 duas problemáticas);<br><br><b>4. Fecho</b> (opcional).",
+      "example_html": "<b>• Introdução (Exemplo)</b><br><br>\"<font color=\"#2196F3\">Na obra intitulada 'Brasil, País do Futuro', Stefan Zweig, autor austríaco, em sua visita ao Brasil, defendeu a ideia de que o país estava destinado a ser um dos mais importantes países do mundo no futuro.</font> <font color=\"#FF9800\">No entanto,</font> <font color=\"#4CAF50\">80 anos depois, as previsões do autor ainda não se concretizaram e os desafios para enfrentar a invisibilidade do trabalho de cuidado - realizado por mulheres são entraves para isso.</font> <font color=\"#FF9800\">Observa-se, assim, que</font> <font color=\"#E91E63\">isso ocorre porque a negligência governamental e a permanência histórica impedem a resolução da questão</font>\"<br><br><b>Análise:</b><br>Essa introdução está completa, pois nela vê-se em <font color=\"#2196F3\">azul o contexto</font>, em <font color=\"#4CAF50\">verde a relação com o tema</font> da proposta de redação, em <font color=\"#E91E63\">rosa sua opinião - tese 1 e 2</font> - e, por último em <font color=\"#FF9800\">laranja os conectivos intraparágrafos</font> que ligam as ideias do texto."
+    },
+    "dev": {
+      "title": "Desenvolvimento",
+      "theory_html": "<b>Estruturando a sua redação</b><br><br><b>• Desenvolvimento</b><br><br><b>1. TÓPICO FRASAL:</b> É a apresentação da ideia central do parágrafo;<br><br><b>2. REPERTÓRIO SOCIOCULTURAL:</b> Conteúdo que fundamenta a discussão a ser desenvolvida;<br><br><b>3. EXPLICAÇÃO:</b> Indicação do motivo pelo qual o repertório foi selecionado;<br><br><b>4. ANÁLISE:</b> Interpretação possível a partir de inferências.",
+      "example_html": "<b>• Desenvolvimento 1 (Exemplo)</b><br><br>\"<font color=\"#FF9800\">Sob este viés,</font> é preciso atentar para a <font color=\"#E91E63\">omissão estatal</font> presente nessa problemática. <font color=\"#FF9800\">Nessa perspectiva,</font> <font color=\"#4CAF50\">o pensador Thomas Hobbes afirma que o Estado é responsável por garantir o bem-estar da população.</font> <font color=\"#FF9800\">Entretanto,</font> <font color=\"#2196F3\">isso não ocorre no Brasil, pois a falta de atuação das autoridades corrobora a permanência do trabalho de cuidado não remunerado e mal pago realizado, principalmente, por mulheres - que inclui cuidar de crianças e idosos, bem como os afazeres domésticos -, visto que o Governo não tem cumprido seu papel no sentido de assegurar os direitos básicos a esse grupo social, como o direito a um salário digno.</font> <font color=\"#FF9800\">Assim,</font> <font color=\"#F44336\">as funções sociais e estatais são descumpridas, agravando o problema.</font>\"<br><br><b>Análise:</b><br>Esse desenvolvimento está completo, pois nela vê-se nas primeiras linhas o tópico frasal, em <font color=\"#4CAF50\">verde o repertório que comprovará seu argumento</font>, em <font color=\"#2196F3\">azul seu argumento</font>, em <font color=\"#F44336\">vermelho sua conclusão de parágrafo</font> e, por último, em <font color=\"#FF9800\">laranja os conectivos inter e intraparágrafos</font>. Além de mencionar a sua <font color=\"#E91E63\">tese 1 em rosa</font> no início do parágrafo.",
+      "example2_html": "<b>• Desenvolvimento 2 (Exemplo)</b><br><br>\"<font color=\"#FF9800\">Outrossim,</font> a <font color=\"#E91E63\">permanência histórica</font> é fator importante como constituinte desse imbróglio. <font color=\"#FF9800\">Nesse sentido,</font> <font color=\"#4CAF50\">consoante ao pensamento do antropólogo Claude Lévi-Strauss, só é possível compreender adequadamente as ações coletivas por meio do entendimento dos eventos históricos.</font> <font color=\"#FF9800\">Desse modo,</font> <font color=\"#2196F3\">a questão da invisibilidade do trabalho de cuidado feito por mulheres majoritariamente pobres e vítimas de discriminação de gênero, mesmo que fortemente presente no século XXI, apresenta raízes indissociáveis à história brasileira - que foi marcada pelo machismo e pelo patriarcado -, uma vez que as atividades domésticas não pagas ainda são delegadas às pessoas do sexo feminino de forma quase que exclusiva.</font> <font color=\"#FF9800\">Logo,</font> <font color=\"#F44336\">as práticas coloniais colaboram com a permanência desse pensamento.</font>\"<br><br><b>Análise:</b><br>Esse desenvolvimento está completo, pois nela vê-se nas primeiras linhas o tópico frasal, em <font color=\"#4CAF50\">verde o repertório que comprovará seu argumento</font>, em <font color=\"#2196F3\">azul seu argumento</font>, em <font color=\"#F44336\">vermelho sua conclusão de parágrafo</font> e, por último, em <font color=\"#FF9800\">laranja os conectivos inter e intraparágrafos</font>. Além de mencionar a sua <font color=\"#E91E63\">tese 2 em rosa</font> no início do parágrafo."
+    },
+    "conc": {
+      "title": "Conclusão / Proposta de Intervenção",
+      "theory_html": "<b>Estruturando a sua redação</b><br><br><b>• Proposta de Intervenção</b><br><br>Elaborar uma proposta de intervenção na prova de redação do Enem representa uma ocasião para que você demonstre seu preparo para o exercício da cidadania, para atuar na realidade em consonância com os direitos humanos. Você deve usar seus conhecimentos desenvolvidos ao longo de sua formação para a produção de um texto no qual, além de se posicionar de maneira crítica e argumentar a favor de um ponto de vista, você possa indicar uma iniciativa que interfira no problema discutido em sua redação.<br><br>Ao elaborar sua proposta, procure responder às seguintes perguntas:<br>1) O que é possível apresentar como proposta de intervenção para o problema?<br>2) Quem deve executá-la?<br>3) Como viabilizar essa proposta?<br>4) Qual efeito ela pode alcançar?<br>5) Que outra informação pode ser acrescentada para detalhar a proposta?",
+      "example_html": "<b>• Proposta de Intervenção (Exemplo)</b><br><br>\"<font color=\"#FF9800\">Faz-se necessário, portanto, que</font> meios sejam criados para intervir nesse óbice. <font color=\"#FF9800\">Logo,</font> <font color=\"#4CAF50\">o Governo Federal</font> - <font color=\"#2196F3\">órgão responsável pela administração federal em todo território nacional</font> - <font color=\"#E91E63\">deve estabelecer políticas públicas que garantam a remuneração e a valorização do trabalho de cuidado</font>, <font color=\"#F44336\">por meio da utilização de verbas governamentais para o pagamento de salários.</font> <font color=\"#87CEEB\">Tal ação deve ser realizada com a finalidade de mitigar a invisibilidade dos afazeres domésticos realizados pela mulher na sociedade brasileira e, consequentemente, combater as raízes históricas presentes nessa questão.</font> <font color=\"#FF9800\">Dessarte,</font> o Brasil poderá se tornar um \"País do Futuro\", como defendido por Stefan Zweig.\"<br><br><b>Análise:</b><br>Essa proposta de intervenção está completa, pois nela vê-se os <font color=\"#FF9800\">conectivos necessários em laranja</font>, <font color=\"#4CAF50\">quem vai fazer (agente) em verde</font>, <font color=\"#2196F3\">o detalhamento desse agente em azul</font>, <font color=\"#E91E63\">a ação a ser desenvolvida em rosa</font>, <font color=\"#F44336\">como isso será feito em vermelho (meio/modo)</font> e a sua finalidade em <font color=\"#87CEEB\">azul bebê</font>."
+    }
+  },
+
+  "quizzes": [
+    {
+      "id": "quiz_intro_iniciante",
+      "title": "Quiz: Introdução",
+      "category": "score_intro",
+      "level": "iniciante",
+      "questions": [
+        {
+          "text": "Qual é a principal função da introdução em uma redação dissertativa-argumentativa?",
+          "options": ["Apresentar o tema, contextualizar e anunciar a tese", "Desenvolver os argumentos principais", "Propor soluções para o problema", "Concluir o texto com proposta de intervenção"],
+          "correct": 0
+        },
+        {
+          "text": "O que é a tese em uma redação do ENEM?",
+          "options": ["Um dado estatístico de apoio", "Um conectivo que liga parágrafos", "A opinião do autor sobre o tema", "Um exemplo histórico"],
+          "correct": 2
+        },
+        {
+          "text": "Qual elemento NÃO pertence à introdução?",
+          "options": ["Contextualização", "Tese", "Proposta de intervenção detalhada", "Fecho da introdução"],
+          "correct": 2
+        },
+        {
+          "text": "A contextualização serve para:",
+          "options": ["Apresentar a proposta de intervenção", "Situar o leitor no tema abordado", "Listar os argumentos do texto", "Concluir o raciocínio"],
+          "correct": 1
+        },
+        {
+          "text": "Qual é o tamanho ideal da introdução no ENEM?",
+          "options": ["1 parágrafo com ~2-4 linhas", "3 parágrafos", "Metade do texto", "1 parágrafo com ~7-10 linhas"],
+          "correct": 3
+        },
+        {
+          "text": "O 'fecho da introdução' tem a função de:",
+          "options": ["Apresentar um dado histórico", "Conectar a introdução ao desenvolvimento", "Escrever a proposta de intervenção", "Definir termos técnicos"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "quiz_dev_iniciante",
+      "title": "Quiz: Desenvolvimento",
+      "category": "score_dev",
+      "level": "iniciante",
+      "questions": [
+        {
+          "text": "Quantos parágrafos de desenvolvimento a redação do ENEM geralmente tem?",
+          "options": ["1", "2", "3", "4"],
+          "correct": 1
+        },
+        {
+          "text": "O que é 'repertório sociocultural'?",
+          "options": ["Lista de palavras formais", "Citação de obras, dados e fatos para embasar argumentos", "Sinônimos de conectivos", "Trecho copiado do texto de apoio"],
+          "correct": 1
+        },
+        {
+          "text": "Qual é a estrutura básica de um parágrafo de desenvolvimento?",
+          "options": ["Tese — proposta — agente", "Ideia central — argumento/dado — conclusão do §", "Contextualização — tese — fecho", "Conectivo — exemplo — conectivo"],
+          "correct": 1
+        },
+        {
+          "text": "A 'conclusão do parágrafo' deve:",
+          "options": ["Repetir a tese da introdução exatamente", "Retomar a ideia central do § e apontar sua relevância", "Apresentar um novo tema", "Listar soluções detalhadas"],
+          "correct": 1
+        },
+        {
+          "text": "Qual é a função do repertório no desenvolvimento?",
+          "options": ["Decorar o texto com citações famosas", "Dar credibilidade e embasamento ao argumento", "Preencher linhas para atingir o mínimo de palavras", "Substituir a conclusão do parágrafo"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "quiz_conc_iniciante",
+      "title": "Quiz: Conclusão",
+      "category": "score_conc",
+      "level": "iniciante",
+      "questions": [
+        {
+          "text": "A proposta de intervenção do ENEM deve conter:",
+          "options": ["Apenas agente e ação", "Agente, ação, meio/modo e finalidade", "Somente a finalidade e o agente", "Um resumo de toda a redação"],
+          "correct": 1
+        },
+        {
+          "text": "Quem pode ser o 'agente' na proposta de intervenção?",
+          "options": ["Apenas o governo federal", "Qualquer entidade capaz de executar a ação (governo, escola, ONGs, mídia...)", "Somente o leitor do texto", "Apenas organizações internacionais"],
+          "correct": 1
+        },
+        {
+          "text": "A 'finalidade' na proposta responde a qual pergunta?",
+          "options": ["Quem?", "Como?", "Para quê?", "Quando?"],
+          "correct": 2
+        },
+        {
+          "text": "Por que a proposta de intervenção deve ser detalhada?",
+          "options": ["Para aumentar o número de linhas", "Porque a banca avalia a viabilidade e o detalhamento da solução", "Porque é o único parágrafo corrigido", "Para compensar argumentos fracos"],
+          "correct": 1
+        },
+        {
+          "text": "Qual conectivo é mais adequado para iniciar a conclusão?",
+          "options": ["No entanto", "Por isso, torna-se imprescindível que", "Em primeiro lugar", "Segundo pesquisas"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "quiz_vocab_iniciante",
+      "title": "Quiz: Vocabulário",
+      "category": "score_vocab",
+      "level": "iniciante",
+      "questions": [
+        {
+          "text": "Qual das frases está mais adequada ao registro formal da redação?",
+          "options": ["A situação tá bem complicada pra todo mundo.", "O cenário apresenta-se notavelmente adverso para a coletividade.", "Todo mundo sofre muito com isso.", "É muito difícil resolver esse problema."],
+          "correct": 1
+        },
+        {
+          "text": "O que são 'palavras desgastadas' na redação do ENEM?",
+          "options": ["Termos técnicos difíceis", "Expressões tão usadas que perderam força (ex: 'nos dias atuais', 'desde os primórdios')", "Palavras estrangeiras", "Conectivos de adição"],
+          "correct": 1
+        },
+        {
+          "text": "Qual opção substitui bem 'nos dias atuais' sem ser clichê?",
+          "options": ["Desde os tempos mais remotos", "Na contemporaneidade / No cenário atual", "Atualmente falando", "No século passado"],
+          "correct": 1
+        },
+        {
+          "text": "O uso de gírias na redação do ENEM é:",
+          "options": ["Encorajado para deixar o texto mais natural", "Penalizado pois foge do registro formal exigido", "Opcional, dependendo do tema", "Permitido apenas na conclusão"],
+          "correct": 1
+        },
+        {
+          "text": "Sinônimos formais de 'problema' para usar na redação:",
+          "options": ["Pepino, encrenca, trampo", "Problemão, dificuldade, situação difícil", "Entrave, obstáculo, desafio, questão", "Coisa, negócio, situação"],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "id": "quiz_connect_iniciante",
+      "title": "Quiz: Conectivos",
+      "category": "score_connect",
+      "level": "iniciante",
+      "questions": [
+        {
+          "text": "Qual conectivo indica ADIÇÃO?",
+          "options": ["No entanto", "Portanto", "Além disso", "Embora"],
+          "correct": 2
+        },
+        {
+          "text": "Qual conectivo indica CONCLUSÃO?",
+          "options": ["Embora", "Dessa forma", "Por outro lado", "Além disso"],
+          "correct": 1
+        },
+        {
+          "text": "Qual conectivo indica OPOSIÇÃO/CONTRASTE?",
+          "options": ["Portanto", "Ademais", "Todavia", "Assim sendo"],
+          "correct": 2
+        },
+        {
+          "text": "'Outrossim' é sinônimo de:",
+          "options": ["No entanto", "Além disso", "Portanto", "Embora"],
+          "correct": 1
+        },
+        {
+          "text": "Qual conectivo NÃO deve iniciar parágrafos segundo as regras do ENEM?",
+          "options": ["Ademais", "Não obstante", "Mas (no início absoluto de parágrafo)", "Nesse sentido"],
+          "correct": 2
+        },
+        {
+          "text": "'Não obstante' é equivalente a:",
+          "options": ["Portanto", "Além disso", "Apesar disso / Mesmo assim", "Tendo em vista"],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "id": "quiz_intro_intermediario",
+      "title": "Quiz: Introdução — Intermediário",
+      "category": "score_intro",
+      "level": "intermediario",
+      "questions": [
+        {
+          "text": "Qual estratégia de contextualização usa dados numéricos de fontes confiáveis para iniciar a redação?",
+          "options": ["Flash narrativo", "Dados estatísticos", "Linguagem figurativa", "Sequência de frases nominais"],
+          "correct": 1
+        },
+        {
+          "text": "No 'flash narrativo', o autor:",
+          "options": ["Cita uma lei federal", "Narra brevemente um evento real ou fictício para ilustrar o tema", "Faz uma pergunta retórica ao leitor", "Lista causas do problema em tópicos"],
+          "correct": 1
+        },
+        {
+          "text": "A estratégia de 'oposição ao senso comum' consiste em:",
+          "options": ["Concordar com a opinião popular sobre o tema", "Contradizer uma ideia amplamente aceita para gerar tensão argumentativa", "Apresentar um fato histórico desconhecido", "Usar metáforas para descrever o tema"],
+          "correct": 1
+        },
+        {
+          "text": "Qual é o risco de usar uma 'citação de autoridade' genérica demais na introdução?",
+          "options": ["Tornar o texto muito informal", "Perder pontos de coesão", "Não estabelecer relação clara com o tema proposto", "Deixar a tese sem embasamento"],
+          "correct": 2
+        },
+        {
+          "text": "Em uma 'subdivisão de fatores', o autor:",
+          "options": ["Explica apenas uma causa do problema", "Apresenta múltiplos aspectos ou causas que serão aprofundados no desenvolvimento", "Resume a proposta de intervenção já na introdução", "Enumera os conectivos que usará no texto"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "quiz_dev_intermediario",
+      "title": "Quiz: Desenvolvimento — Intermediário",
+      "category": "score_dev",
+      "level": "intermediario",
+      "questions": [
+        {
+          "text": "O que diferencia um repertório sociocultural de qualidade de um genérico?",
+          "options": ["Ser mais longo e detalhado", "Ter relação direta e explícita com a tese desenvolvida no parágrafo", "Ser de um autor famoso internacionalmente", "Estar entre aspas e em itálico"],
+          "correct": 1
+        },
+        {
+          "text": "Por que é importante que cada parágrafo de desenvolvimento tenha sua própria conclusão?",
+          "options": ["Para atingir o número mínimo de linhas exigido", "Para fechar o raciocínio do parágrafo e reforçar a tese geral", "Para introduzir o próximo repertório", "Para substituir os conectivos interparágrafos"],
+          "correct": 1
+        },
+        {
+          "text": "O tópico frasal deve ser posicionado:",
+          "options": ["No final do parágrafo", "No meio, após o repertório", "No início do parágrafo de desenvolvimento", "Apenas no segundo parágrafo"],
+          "correct": 2
+        },
+        {
+          "text": "Qual erro compromete mais a competência III (coesão e coerência) no desenvolvimento?",
+          "options": ["Usar repertório de área diferente do tema", "Apresentar argumento sem conectá-lo à tese ou ao tópico frasal", "Escrever parágrafos muito curtos", "Usar a mesma palavra duas vezes no parágrafo"],
+          "correct": 1
+        },
+        {
+          "text": "No desenvolvimento, a 'análise' (4ª etapa) serve para:",
+          "options": ["Repetir o repertório com outras palavras", "Interpretar e inferir consequências a partir do argumento apresentado", "Apresentar um segundo repertório", "Concluir toda a redação"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "quiz_connect_avancado",
+      "title": "Quiz: Conectivos — Avançado",
+      "category": "score_connect",
+      "level": "avancado",
+      "questions": [
+        {
+          "text": "Qual é a diferença de uso entre 'porquanto' e 'portanto'?",
+          "options": ["São sinônimos perfeitos e intercambiáveis", "'Porquanto' indica causa/explicação; 'portanto' indica conclusão/consequência", "'Portanto' indica causa; 'porquanto' indica conclusão", "Ambos indicam adição de ideias"],
+          "correct": 1
+        },
+        {
+          "text": "O conectivo 'conquanto' equivale a:",
+          "options": ["Por isso / Dessa forma", "Embora / Ainda que (concessão)", "Além disso / Ademais", "Tendo em vista / Visto que"],
+          "correct": 1
+        },
+        {
+          "text": "Em qual situação o conectivo 'destarte' é mais adequado?",
+          "options": ["Ao introduzir uma concessão no argumento", "Ao introduzir a proposta de intervenção ou síntese conclusiva", "Ao adicionar um segundo repertório", "Ao contrastar duas ideias opostas"],
+          "correct": 1
+        },
+        {
+          "text": "'Malgrado' é um conectivo que indica:",
+          "options": ["Conclusão", "Adição", "Concessão (apesar de / mesmo que)", "Explicação causal"],
+          "correct": 2
+        },
+        {
+          "text": "Qual sequência de conectivos está corretamente usada para estruturar os dois parágrafos de desenvolvimento?",
+          "options": ["'Portanto' no 1º e 'Além disso' no 2º", "'Sob esse viés' no 1º e 'Outrossim' no 2º", "'No entanto' no 1º e 'Dessarte' no 2º", "'Em primeiro lugar' no 1º e 'Em segundo' no 2º (ambos proibidos)"],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+
+  "repertory": [
+    {
+      "theme_key": "SAUDE",
+      "theme_title": "Saúde",
+      "citations": [
+        { "author": "Constituição Federal (Artigo 196)", "text": "A saúde é direito de todos e dever do Estado, garantido mediante políticas sociais e econômicas que visem à redução do risco de doença e de outros agravos." },
+        { "author": "Organização Mundial da Saúde (OMS)", "text": "A saúde é um estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças ou enfermidades." },
+        { "author": "Arthur Schopenhauer", "text": "A saúde não é tudo, mas sem ela, tudo o mais é nada." },
+        { "author": "Hipócrates", "text": "Que seu remédio seja seu alimento, e que seu alimento seja seu remédio." },
+        { "author": "Mahatma Gandhi", "text": "É a saúde que é a verdadeira riqueza, e não peças de ouro e prata." }
+      ]
+    },
+    {
+      "theme_key": "EDUCACAO",
+      "theme_title": "Educação",
+      "citations": [
+        { "author": "Paulo Freire", "text": "A educação não transforma o mundo. Educação muda as pessoas. Pessoas transformam o mundo." },
+        { "author": "Immanuel Kant", "text": "O ser humano é aquilo que a educação faz dele." },
+        { "author": "Nelson Mandela", "text": "A educação é a arma mais poderosa que você pode usar para mudar o mundo." },
+        { "author": "Pitágoras", "text": "Educai as crianças e não será preciso punir os homens." },
+        { "author": "Anísio Teixeira", "text": "Só existirá democracia no Brasil no dia em que se montar no país a máquina que prepara as democracias. Essa máquina é a da escola pública." }
+      ]
+    },
+    {
+      "theme_key": "TECNOLOGIA",
+      "theme_title": "Tecnologia",
+      "citations": [
+        { "author": "Albert Einstein", "text": "Tornou-se assustadoramente claro que a nossa tecnologia ultrapassou a nossa humanidade." },
+        { "author": "Zygmunt Bauman", "text": "Na era da informação, a invisibilidade é equivalente à morte." },
+        { "author": "Bill Gates", "text": "A internet está se tornando a praça principal da aldeia global de amanhã." },
+        { "author": "Pierre Lévy", "text": "Toda nova tecnologia cria seus próprios excluídos." },
+        { "author": "Tim Berners-Lee", "text": "A Web como eu a idealizei, não a vimos ainda. O futuro ainda é muito maior do que o passado." }
+      ]
+    },
+    {
+      "theme_key": "CULTURA",
+      "theme_title": "Cultura",
+      "citations": [
+        { "author": "Constituição Federal (Artigo 215)", "text": "O Estado garantirá a todos o pleno exercício dos direitos culturais e acesso às fontes da cultura nacional, e apoiará e incentivará a valorização e a difusão das manifestações culturais." },
+        { "author": "Marcus Garvey", "text": "Um povo sem o conhecimento da sua história, origem e cultura é como uma árvore sem raízes." },
+        { "author": "Ariano Suassuna", "text": "A arte para mim não é produto de mercado. Podem me chamar de romântico. Arte para mim é missão, vocação e festa." },
+        { "author": "Celso Furtado", "text": "O desenvolvimento só tem sentido se for um processo de enriquecimento cultural." },
+        { "author": "Confúcio", "text": "A cultura está acima da diferença da condição social." }
+      ]
+    },
+    {
+      "theme_key": "VIOLENCIA",
+      "theme_title": "Violência",
+      "citations": [
+        { "author": "Martin Luther King Jr.", "text": "A violência cria mais problemas sociais do que resolve." },
+        { "author": "Hannah Arendt", "text": "A violência aparece onde o poder está em risco." },
+        { "author": "Thomas Hobbes", "text": "O homem é o lobo do homem." },
+        { "author": "Isaac Asimov", "text": "A violência é o último refúgio dos incompetentes." },
+        { "author": "Mahatma Gandhi", "text": "Olho por olho, e o mundo acabará cego." }
+      ]
+    },
+    {
+      "theme_key": "ESPORTE",
+      "theme_title": "Esporte",
+      "citations": [
+        { "author": "Nelson Mandela", "text": "O esporte tem o poder de mudar o mundo. Tem o poder de inspirar, tem o poder de unir as pessoas de um jeito que poucas coisas conseguem." },
+        { "author": "Barão de Coubertin", "text": "O mais importante na vida não é o triunfo, mas a luta; o essencial não é ter vencido, mas ter lutado bem." },
+        { "author": "Juvenal", "text": "Mens sana in corpore sano." },
+        { "author": "Michael Jordan", "text": "O talento vence jogos, mas o trabalho em equipe e a inteligência vencem campeonatos." },
+        { "author": "Ayrton Senna", "text": "No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio termo. Ou você faz uma coisa bem feita ou não faz." }
+      ]
+    },
+    {
+      "theme_key": "ECONOMIA",
+      "theme_title": "Economia",
+      "citations": [
+        { "author": "Karl Marx", "text": "O capital é trabalho morto, que, como um vampiro, vive apenas sugando o trabalho vivo, e vive tanto mais quanto mais trabalho vivo suga." },
+        { "author": "Muhammad Yunus", "text": "A pobreza não é criada pelas pessoas pobres. Ela é criada pelo sistema que nós construímos, pelas instituições que desenhamos." },
+        { "author": "Adam Smith", "text": "Não é da benevolência do açougueiro, do cervejeiro e do padeiro que esperamos o nosso jantar, mas da consideração que eles têm pelos próprios interesses." },
+        { "author": "Celso Furtado", "text": "Não pode haver desenvolvimento sem que a riqueza gerada atenda às necessidades de toda a população." },
+        { "author": "John Maynard Keynes", "text": "A dificuldade não reside nas novas ideias, mas em escapar das velhas." }
+      ]
+    },
+    {
+      "theme_key": "MEIO_AMBIENTE",
+      "theme_title": "Meio Ambiente",
+      "citations": [
+        { "author": "Hans Jonas", "text": "Aja de tal modo que os efeitos da sua ação não sejam destrutivos para a futura possibilidade de vida humana na Terra." },
+        { "author": "Chefe Seattle", "text": "A Terra não pertence ao homem; o homem pertence à Terra. Tudo o que acontece à Terra, acontecerá aos filhos da Terra." },
+        { "author": "Jacques-Yves Cousteau", "text": "A água e o ar, os dois fluidos essenciais dos quais depende toda a vida, tornaram-se latas de lixo globais." },
+        { "author": "Chico Mendes", "text": "A ecologia sem luta de classes é jardinagem." },
+        { "author": "Constituição Federal (Artigo 225)", "text": "Todos têm direito ao meio ambiente ecologicamente equilibrado, bem de uso comum do povo e essencial à sadia qualidade de vida..." }
+      ]
+    },
+    {
+      "theme_key": "GRUPOS",
+      "theme_title": "Grupos Vulneráveis",
+      "citations": [
+        { "author": "Declaração Universal dos Direitos Humanos", "text": "Todos os seres humanos nascem livres e iguais em dignidade e em direitos." },
+        { "author": "Gilberto Dimenstein", "text": "No Brasil, há uma cidadania de papel, na qual os direitos estão garantidos na lei, mas não se efetivam na prática para a maior parte da população." },
+        { "author": "Nelson Mandela", "text": "Ninguém nasce odiando outra pessoa pela cor de sua pele, por sua origem ou ainda por sua religião. Para odiar, as pessoas precisam aprender..." },
+        { "author": "Simone de Beauvoir", "text": "Não se nasce mulher, torna-se mulher." },
+        { "author": "Desmond Tutu", "text": "Se você é neutro em situações de injustiça, você escolhe o lado do opressor." }
+      ]
+    }
+  ],
+
+  "corrida_reescrita": [
+    {
+      "bad_phrase": "As pessoas hoje em dia tão muito no celular.",
+      "mission": "Reescreva em linguagem formal.",
+      "key_themes": ["celular", "dispositivo", "tecnologia", "uso", "comportamento", "social"],
+      "good_example": "A crescente dependência tecnológica influencia o comportamento social contemporâneo.",
+      "difficulty": 1
+    },
+    {
+      "bad_phrase": "O negócio é que tem muita gente passando fome no Brasil.",
+      "mission": "Reescreva em linguagem formal.",
+      "key_themes": ["fome", "insegurança", "alimentar", "brasil", "população", "desigualdade"],
+      "good_example": "A insegurança alimentar ainda afeta milhões de brasileiros, evidenciando a desigualdade social.",
+      "difficulty": 1
+    },
+    {
+      "bad_phrase": "A mulher ainda sofre muito preconceito no trampo.",
+      "mission": "Reescreva em linguagem formal.",
+      "key_themes": ["mulher", "trabalho", "discriminação", "gênero", "mercado"],
+      "good_example": "A discriminação de gênero no mercado de trabalho ainda representa um grave obstáculo para as mulheres.",
+      "difficulty": 1
+    },
+    {
+      "bad_phrase": "O governo não tá fazendo nada pelo povo.",
+      "mission": "Reescreva em linguagem formal.",
+      "key_themes": ["governo", "estado", "população", "políticas", "omissão", "social"],
+      "good_example": "A omissão estatal compromete o bem-estar da população, evidenciando a negligência governamental.",
+      "difficulty": 1
+    },
+    {
+      "bad_phrase": "O jovem de hoje não quer saber de estudar.",
+      "mission": "Reescreva em linguagem formal.",
+      "key_themes": ["jovem", "educação", "estudo", "formação", "sistema"],
+      "good_example": "A desmotivação juvenil em relação aos estudos reflete falhas estruturais no sistema educacional.",
+      "difficulty": 1
+    },
+    {
+      "bad_phrase": "Todo mundo sabe que a violência tá aumentando muito.",
+      "mission": "Transforme em argumento formal com causa e consequência.",
+      "key_themes": ["violência", "segurança", "pública", "criminalidade", "social", "estado"],
+      "good_example": "O crescimento da criminalidade reflete a insuficiência das políticas públicas de segurança e a exclusão socioeconômica estrutural.",
+      "difficulty": 2
+    },
+    {
+      "bad_phrase": "O meio ambiente tá sendo destruído por causa das empresas gananciosas.",
+      "mission": "Reescreva com registro formal e argumento estruturado.",
+      "key_themes": ["meio", "ambiente", "degradação", "ambiental", "setor", "produtivo", "sustentabilidade"],
+      "good_example": "A degradação ambiental decorre, em parte, de práticas insustentáveis do setor produtivo, evidenciando a necessidade de regulação mais rigorosa.",
+      "difficulty": 2
+    }
+  ],
+
+  "detetive_paragrafos": [
+    {
+      "id": "par_intro_trabalho_cuidado",
+      "title": "Introdução — Trabalho de Cuidado",
+      "full_text": "Na obra intitulada 'Brasil, País do Futuro', Stefan Zweig, autor austríaco, defendeu que o Brasil estava destinado a ser um dos países mais importantes do mundo. 80 anos depois, as previsões do autor ainda não se concretizaram, e os desafios para enfrentar a invisibilidade do trabalho de cuidado realizado por mulheres são entraves para isso. Isso ocorre porque a negligência governamental e a permanência histórica impedem a resolução da questão.",
+      "segments": [
+        { "text": "Na obra intitulada 'Brasil, País do Futuro', Stefan Zweig, autor austríaco, defendeu que o Brasil estava destinado a ser um dos países mais importantes do mundo.", "label": "Repertório Sociocultural", "tip": "Referência a autor/obra para contextualizar = Repertório Sociocultural." },
+        { "text": "80 anos depois, as previsões do autor ainda não se concretizaram, e os desafios para enfrentar a invisibilidade do trabalho de cuidado realizado por mulheres são entraves para isso.", "label": "Argumento / Explicação", "tip": "Ligação do repertório com a realidade tema = Argumento / Explicação." },
+        { "text": "isso ocorre porque a negligência governamental e a permanência histórica impedem a resolução da questão.", "label": "Tese", "tip": "Opinião central do autor sobre o problema = Tese." }
+      ]
+    },
+    {
+      "id": "par_dev1_omissao_estatal",
+      "title": "Desenvolvimento 1 — Omissão Estatal",
+      "full_text": "Sob este viés, é preciso atentar para a omissão estatal presente nessa problemática. Nessa perspectiva, o pensador Thomas Hobbes afirma que o Estado é responsável por garantir o bem-estar da população. Entretanto, a falta de atuação das autoridades corrobora a permanência do trabalho de cuidado não remunerado e mal pago realizado principalmente por mulheres, visto que o Governo não tem cumprido seu papel de assegurar direitos básicos. Assim, as funções sociais e estatais são descumpridas, agravando o problema.",
+      "segments": [
+        { "text": "é preciso atentar para a omissão estatal presente nessa problemática.", "label": "Tese / Tópico Frasal", "tip": "Apresenta a ideia central do parágrafo (Tópico Frasal) = Tese / Tópico Frasal." },
+        { "text": "o pensador Thomas Hobbes afirma que o Estado é responsável por garantir o bem-estar da população.", "label": "Repertório Sociocultural", "tip": "Citação de filósofo/teórico para embasar = Repertório Sociocultural." },
+        { "text": "a falta de atuação das autoridades corrobora a permanência do trabalho de cuidado não remunerado e mal pago realizado principalmente por mulheres, visto que o Governo não tem cumprido seu papel de assegurar direitos básicos.", "label": "Argumento / Explicação", "tip": "Desenvolvimento da ideia com explicação = Argumento / Explicação." },
+        { "text": "as funções sociais e estatais são descumpridas, agravando o problema.", "label": "Conclusão do Parágrafo", "tip": "Retoma a ideia e fecha o raciocínio = Conclusão do parágrafo." }
+      ]
+    },
+    {
+      "id": "par_conc_proposta",
+      "title": "Conclusão — Proposta de Intervenção",
+      "full_text": "Faz-se necessário, portanto, que meios sejam criados para intervir nesse óbice. Logo, o Governo Federal — órgão responsável pela administração federal em todo território nacional — deve estabelecer políticas públicas que garantam a remuneração e a valorização do trabalho de cuidado, por meio da utilização de verbas governamentais para o pagamento de salários. Tal ação deve ser realizada com a finalidade de mitigar a invisibilidade dos afazeres domésticos realizados pela mulher na sociedade brasileira.",
+      "segments": [
+        { "text": "Faz-se necessário, portanto, que meios sejam criados para intervir nesse óbice.", "label": "Proposta de Intervenção", "tip": "Introduz a proposta de solução para o problema = Proposta de Intervenção." },
+        { "text": "o Governo Federal — órgão responsável pela administração federal em todo território nacional — deve estabelecer políticas públicas que garantam a remuneração e a valorização do trabalho de cuidado,", "label": "Proposta de Intervenção", "tip": "Define o agente (Governo Federal) e a ação (políticas públicas) = Proposta de Intervenção." },
+        { "text": "por meio da utilização de verbas governamentais para o pagamento de salários.", "label": "Proposta de Intervenção", "tip": "Especifica o meio/modo de execução da proposta = Proposta de Intervenção." },
+        { "text": "Tal ação deve ser realizada com a finalidade de mitigar a invisibilidade dos afazeres domésticos realizados pela mulher na sociedade brasileira.", "label": "Proposta de Intervenção", "tip": "Apresenta a finalidade da proposta = Proposta de Intervenção (finalidade)." }
+      ]
+    },
+    {
+      "id": "par_dev2_permanencia_historica",
+      "title": "Desenvolvimento 2 — Permanência Histórica",
+      "full_text": "Outrossim, a permanência histórica é fator importante como constituinte desse imbróglio. Nesse sentido, consoante ao pensamento do antropólogo Claude Lévi-Strauss, só é possível compreender adequadamente as ações coletivas por meio do entendimento dos eventos históricos. Desse modo, a questão da invisibilidade do trabalho de cuidado apresenta raízes indissociáveis à história brasileira — marcada pelo machismo e pelo patriarcado —, uma vez que as atividades domésticas não pagas ainda são delegadas às mulheres de forma quase exclusiva. Logo, as práticas coloniais colaboram com a permanência desse pensamento.",
+      "segments": [
+        { "text": "a permanência histórica é fator importante como constituinte desse imbróglio.", "label": "Tese / Tópico Frasal", "tip": "Apresenta a ideia central do parágrafo (Tópico Frasal) = Tese / Tópico Frasal." },
+        { "text": "consoante ao pensamento do antropólogo Claude Lévi-Strauss, só é possível compreender adequadamente as ações coletivas por meio do entendimento dos eventos históricos.", "label": "Repertório Sociocultural", "tip": "Referência a teórico/pesquisador = Repertório Sociocultural." },
+        { "text": "a questão da invisibilidade do trabalho de cuidado apresenta raízes indissociáveis à história brasileira — marcada pelo machismo e pelo patriarcado —, uma vez que as atividades domésticas não pagas ainda são delegadas às mulheres de forma quase exclusiva.", "label": "Argumento / Explicação", "tip": "Aplica o repertório para explicar a realidade = Argumento / Explicação." },
+        { "text": "as práticas coloniais colaboram com a permanência desse pensamento.", "label": "Conclusão do Parágrafo", "tip": "Retoma e fecha o parágrafo = Conclusão do parágrafo." }
+      ]
+    },
+    {
+      "id": "par_dev_violencia_urbana",
+      "title": "Desenvolvimento — Violência Urbana",
+      "full_text": "Sob essa ótica, é imperativo analisar o papel da exclusão socioeconômica na perpetuação da violência urbana. Conforme aponta o sociólogo Zygmunt Bauman, a modernidade líquida fragmenta os laços sociais, deixando indivíduos à margem das estruturas de proteção coletiva. Esse cenário decorre da ausência de políticas públicas de segurança efetivas e da exclusão socioeconômica estrutural que empurra parcelas da população à criminalidade. Portanto, a desigualdade social constitui raiz fundamental da insegurança pública no Brasil.",
+      "segments": [
+        { "text": "é imperativo analisar o papel da exclusão socioeconômica na perpetuação da violência urbana.", "label": "Tese / Tópico Frasal", "tip": "Apresenta a ideia central do parágrafo = Tópico Frasal." },
+        { "text": "Conforme aponta o sociólogo Zygmunt Bauman, a modernidade líquida fragmenta os laços sociais, deixando indivíduos à margem das estruturas de proteção coletiva.", "label": "Repertório Sociocultural", "tip": "Citação de teórico para embasar o argumento = Repertório Sociocultural." },
+        { "text": "Esse cenário decorre da ausência de políticas públicas de segurança efetivas e da exclusão socioeconômica estrutural que empurra parcelas da população à criminalidade.", "label": "Argumento / Explicação", "tip": "Explicação das causas do problema = Argumento / Explicação." },
+        { "text": "a desigualdade social constitui raiz fundamental da insegurança pública no Brasil.", "label": "Conclusão do Parágrafo", "tip": "Fecha o raciocínio do parágrafo = Conclusão do parágrafo." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corretor Produzaê - Painel de Avaliação</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+  /* ========================================================
+     SISTEMA DE TEMAS DINÂMICOS (ESCURECIDO POR PADRÃO)
+     ======================================================== */
+  :root {
+    color-scheme: dark;          
+    
+    --bg: #131211;               
+    --paper: #1F1D1B;            
+    --bg-subcard: #262421;       
+    --ink: #F5F2EB;              
+    --ink-soft: #A6A095;         
+    --brown: #A38260;            
+    --brown-dark: #7A5F43;       
+    --border: #2C2A29;           
+    
+    --danger: #C94A4A;
+    --danger-bg: #2C1E1C;
+    --success: #73D990;
+    --success-bg: #1C2C21;
+    --shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --radius: 20px;
+    
+    --whatsapp-bg: #171B18;
+    --whatsapp-text: #73D990;
+  }
+
+  /* CONFIGURAÇÃO DO MODO CLARO */
+  .light-mode {
+    color-scheme: light;
+    
+    --bg: #F6F3EC;
+    --paper: #FFFFFF;
+    --bg-subcard: #FDFCF9;
+    --ink: #2E2A22;
+    --ink-soft: #6B6355;
+    --brown: #7A5230;
+    --brown-dark: #5C3D22;
+    --border: #E4DCCB;
+    
+    --danger: #B04A3B;
+    --danger-bg: #FBEAE6;
+    --success: #2E5138;
+    --success-bg: #E8F0E9;
+    --shadow: 0 4px 12px rgba(46, 42, 34, 0.05);
+    
+    --whatsapp-bg: #F7FBF7;
+    --whatsapp-text: #2E5138;
+  }
+
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Inputs Numéricos sem setas nativas */
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  /* Customização Temática da Barra de Rolagem */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 99px;
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brown);
+  }
+
+  /* Header Layout */
+  header.app-header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .header-title-group {
+    text-align: left;
+    flex: 1;
+    min-width: 280px;
+  }
+  header.app-header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  header.app-header p {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* RETÂNGULO DE TAMANHO FIXO PARA ALTERAR TEMA */
+  .theme-toggle-btn {
+    background: var(--bg-subcard);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    height: 44px;
+    width: 150px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .theme-toggle-btn:hover {
+    border-color: var(--brown);
+    background: var(--paper);
+  }
+
+  /* Upload Card */
+  .upload-card {
+    background: var(--bg-subcard);
+    border: 2px dashed var(--brown);
+    border-radius: var(--radius);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .upload-card label.upload-btn {
+    background: var(--brown);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.15s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .upload-card label.upload-btn:hover { background: var(--brown-dark); }
+  .upload-card label.upload-btn:active { transform: scale(0.98); }
+  .upload-card input[type=file] { display: none; }
+  
+  .upload-status { font-size: 13px; color: var(--ink-soft); font-weight: 500; }
+  .upload-status.ok { color: var(--success); }
+  .upload-status.err { color: var(--danger); }
+
+  /* Main Structure */
+  main {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: start;
+  }
+  
+  @media (max-width: 1024px) {
+    .layout { grid-template-columns: 1fr; }
+    header.app-header { padding: 20px; }
+    main { padding: 20px; }
+  }
+
+  .col { display: flex; flex-direction: column; gap: 28px; }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .card h2 {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--brown);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+  }
+
+  /* Info Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    font-size: 14px;
+    background: var(--bg-subcard);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+  .info-grid .full { grid-column: 1 / -1; }
+  .info-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .info-value { font-weight: 600; color: var(--ink); word-break: break-word; }
+  .info-value.muted { color: var(--ink-soft); font-weight: 400; font-style: italic; }
+
+  .empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--ink-soft);
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+  }
+  .empty-state strong { display: block; color: var(--ink); margin-bottom: 8px; font-size: 16px; }
+
+  /* PDF Viewport */
+  .pdf-frame-wrap {
+    width: 100%;
+    height: 640px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #171615;
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.5);
+  }
+  .pdf-frame-wrap iframe { width: 100%; height: 100%; border: none; }
+
+  /* Form Elements */
+  form .field { margin-bottom: 18px; }
+  form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    color: var(--ink-soft);
+  }
+  form input[type=text], form input[type=number], form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--bg-subcard);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  form input:focus, form textarea:focus { border-color: var(--brown); }
+  form textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+  /* Nota Final Compound */
+  .nota-final-box {
+    background: var(--bg-subcard);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .nota-final-box .label { font-weight: 700; color: var(--brown); font-size: 15px; }
+  .nota-final-box input {
+    width: 110px;
+    text-align: right;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--brown);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  /* Competencias */
+  .competencia {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 18px;
+    background: var(--bg);
+  }
+  .competencia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .competencia-header .titulo { font-weight: 700; color: var(--ink); font-size: 15px; }
+  .competencia-header input[type=number] {
+    width: 90px;
+    text-align: center;
+    font-weight: 700;
+    background: var(--bg-subcard);
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  /* WhatsApp Output Container */
+  .whatsapp-preview {
+    background: var(--whatsapp-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    max-height: 350px;
+    overflow-y: auto;
+    font-family: "Courier New", monospace;
+    color: var(--whatsapp-text);
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Buttons Custom Core */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 14px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.05s;
+  }
+  .btn:active { transform: scale(0.98); }
+  
+  .btn-primary { background: var(--brown-dark); color: #fff; width: 100%; padding: 18px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;}
+  .btn-primary:hover { opacity: 0.9; }
+  
+  .btn-secondary { background: var(--brown); color: #fff; }
+  .btn-secondary:hover { opacity: 0.9; }
+  
+  .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
+  .btn-outline:hover { background: var(--bg-subcard); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+
+  /* Alerts */
+  .alert { border-radius: 12px; padding: 14px 18px; font-size: 14px; font-weight: 500; margin-top: 16px; }
+  .alert-error { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger); }
+  .alert-success { background: var(--success-bg); color: var(--success); border: 1px solid var(--success); }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    background: var(--paper);
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-title-group">
+    <h1>Corretor Produzaê</h1>
+    <p>Preencha os critérios do ENEM e gere relatórios integrados nativos.</p>
+  </div>
+  
+  <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+    <button class="theme-toggle-btn" id="themeToggle" onclick="alternarTemaApp()">Modo Claro</button>
+
+    <section class="upload-card">
+      <label class="upload-btn" for="fileInput">Carregar redação</label>
+      <input type="file" id="fileInput" accept=".produzae,.zip">
+      <span class="upload-status" id="uploadStatus">Nenhum rascunho ativo no painel.</span>
+    </section>
+  </div>
+</header>
+
+<main>
+  <div class="layout">
+
+    <div class="col">
+      <section class="card" id="dadosCard">
+        <h2>Dados da redação</h2>
+        <div id="dadosVazio" class="empty-state">
+          <strong>Aguardando dados estruturais.</strong>
+          Insira o arquivo enviado pelo aluno para descriptografar os metadados.
+        </div>
+        <div id="dadosConteudo" class="info-grid" style="display:none;"></div>
+      </section>
+
+      <section class="card" id="formCard" style="display:none;">
+        <h2>Formulário de correção</h2>
+        <form id="correcaoForm" onsubmit="return false;">
+          <div class="field">
+            <label for="profNome">Nome do professor avaliador</label>
+            <input type="text" id="profNome" placeholder="Ex: Prof. Anderson Maciel">
+          </div>
+
+          <div class="nota-final-box">
+            <span class="label">Nota Final Unificada (0 - 1000)</span>
+            <input type="number" id="notaFinal" min="0" max="1000" value="0">
+          </div>
+
+          <div id="competenciasContainer"></div>
+
+          <div class="field">
+            <label for="comentarioGeral">Diretrizes e Comentário Geral</label>
+            <textarea id="comentarioGeral" placeholder="Escreva uma análise geral sobre os eixos argumentativos..."></textarea>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="card">
+        <h2>Folha de Redação Oficial (PDF)</h2>
+        <div id="pdfVazio" class="empty-state">
+          <strong>Nenhum documento digitalizado.</strong>
+          O espelho pautado do aluno será renderizado nesta seção.
+        </div>
+        <div id="pdfWrap" class="pdf-frame-wrap" style="display:none;">
+          <iframe id="pdfFrame" title="Redação original"></iframe>
+        </div>
+        <div class="btn-row" id="pdfBtnRow" style="display:none;">
+          <button class="btn btn-outline" id="btnBaixarPdf">Baixar cópia do PDF original</button>
+        </div>
+      </section>
+
+      <section class="card" id="whatsCard" style="display:none;">
+        <h2>Prévia do Relatório (WhatsApp)</h2>
+        <div class="whatsapp-preview" id="whatsPreview"></div>
+        <div class="btn-row">
+          <button class="btn btn-secondary" id="btnCopiarWhats">Copiar relatório para WhatsApp</button>
+          <button class="btn btn-outline" id="btnBaixarTxt">Exportar relatório em .TXT</button>
+        </div>
+      </section>
+
+      <section class="card" id="exportCard" style="display:none;">
+        <h2>Finalizar e Exportar</h2>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btnGerarProduzae">Gerar pacote .produzae corrigido</button>
+        </div>
+        <div id="exportMsg"></div>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<footer>Corretor Produzaê &mdash; Terminal de avaliação local. Nenhum dado é transmitido a servidores externos.</footer>
+
+<script>
+/* LÓGICA DE ALTERNÂNCIA DE TEMA (MODO CLARO / ESCURO) */
+function alternarTemaApp() {
+  const body = document.body;
+  const toggleBtn = document.getElementById("themeToggle");
+  const isLight = body.classList.toggle("light-mode");
+  
+  toggleBtn.textContent = isLight ? "Modo Escuro" : "Modo Claro";
+}
+
+/* ==========================================================================
+   ESTADO GLOBAL INTERNO (Estrutura intocada do original)
+   ========================================================================== */
+const estado = {
+  manifest: null,
+  redacao: null,
+  pdfBlob: null,       
+  pdfUrl: null,        
+  arquivoValido: false
+};
+
+const COMPETENCIAS_META = [
+  { codigo: "C1", titulo: "Competência 1" },
+  { codigo: "C2", titulo: "Competência 2" },
+  { codigo: "C3", titulo: "Competência 3" },
+  { codigo: "C4", titulo: "Competência 4" },
+  { codigo: "C5", titulo: "Competência 5" }
+];
+
+/* ==========================================================================
+   UTILITÁRIOS 
+   ========================================================================== */
+function gerarUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+function valorOuNaoInformado(v) {
+  if (v === undefined || v === null || String(v).trim() === "") {
+    return "Não informado";
+  }
+  return v;
+}
+
+function formatarData(iso) {
+  if (!iso) return "Não informado";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso;
+  return d.toLocaleString("pt-BR");
+}
+
+function mostrarStatusUpload(msg, tipo) {
+  const el = document.getElementById("uploadStatus");
+  el.textContent = msg;
+  el.className = "upload-status" + (tipo ? " " + tipo : "");
+}
+
+function limparSecoesAntesDoCarregamento() {
+  document.getElementById("dadosVazio").style.display = "block";
+  document.getElementById("dadosConteudo").style.display = "none";
+  document.getElementById("formCard").style.display = "none";
+  document.getElementById("pdfVazio").style.display = "block";
+  document.getElementById("pdfWrap").style.display = "none";
+  document.getElementById("pdfBtnRow").style.display = "none";
+  document.getElementById("whatsCard").style.display = "none";
+  document.getElementById("exportCard").style.display = "none";
+  document.getElementById("exportMsg").innerHTML = "";
+}
+
+/* ==========================================================================
+   CARREGAMENTO DO PACOTE .produzae
+   ========================================================================== */
+async function carregarPacoteProduzae(file) {
+  limparSecoesAntesDoCarregamento();
+  estado.arquivoValido = false;
+  mostrarStatusUpload("Lendo arquivo nativo...", "");
+
+  let zip;
+  try {
+    zip = await JSZip.loadAsync(file);
+  } catch (e) {
+    mostrarStatusUpload("Arquivo inválido: impossível abrir como contêiner zip.", "err");
+    return;
+  }
+
+  const manifestFile = zip.file("manifest.json");
+  if (!manifestFile) {
+    mostrarStatusUpload("Arquivo corrompido: manifest.json ausente.", "err");
+    return;
+  }
+
+  const redacaoFile = zip.file("redacao.json");
+  if (!redacaoFile) {
+    mostrarStatusUpload("Arquivo corrompido: dados da redação ausentes.", "err");
+    return;
+  }
+
+  const pdfFile = zip.file("redacao.pdf");
+  if (!pdfFile) {
+    mostrarStatusUpload("Arquivo corrompido: documento PDF não localizado.", "err");
+    return;
+  }
+
+  let manifest;
+  try {
+    const manifestText = await manifestFile.async("text");
+    manifest = JSON.parse(manifestText);
+  } catch (e) {
+    mostrarStatusUpload("Erro estrutural: falha crítica ao parsear o manifesto.", "err");
+    return;
+  }
+
+  if (!validarManifest(manifest)) {
+    mostrarStatusUpload("Assinatura inválida: o arquivo não pertence ao ecossistema Produzaê.", "err");
+    return;
+  }
+
+  let redacao;
+  try {
+    const redacaoText = await redacaoFile.async("text");
+    redacao = JSON.parse(redacaoText);
+  } catch (e) {
+    mostrarStatusUpload("Erro estrutural: falha ao processar base JSON da redação.", "err");
+    return;
+  }
+
+  let pdfBlob;
+  try {
+    pdfBlob = await pdfFile.async("blob");
+    pdfBlob = pdfBlob.slice(0, pdfBlob.size, "application/pdf");
+  } catch (e) {
+    mostrarStatusUpload("Erro de renderização: falha ao extrair binários do PDF.", "err");
+    return;
+  }
+
+  estado.manifest = manifest;
+  estado.redacao = redacao;
+  estado.pdfBlob = pdfBlob;
+  if (estado.pdfUrl) URL.revokeObjectURL(estado.pdfUrl);
+  estado.pdfUrl = URL.createObjectURL(pdfBlob);
+  estado.arquivoValido = true;
+
+  mostrarStatusUpload("Redação descriptografada e carregada com sucesso.", "ok");
+
+  exibirDadosRedacao(redacao, manifest);
+  exibirPdf(estado.pdfUrl);
+  montarFormularioCorrecao();
+  atualizarMensagemWhatsapp();
+
+  document.getElementById("formCard").style.display = "block";
+  document.getElementById("whatsCard").style.display = "block";
+  document.getElementById("exportCard").style.display = "block";
+}
+
+function validarManifest(manifest) {
+  if (!manifest) return false;
+  if (manifest.tipo !== "produzae_redacao") return false;
+  if (!manifest.idRedacao) return false;
+  return true;
+}
+
+/* ==========================================================================
+   EXIBIÇÃO DOS DADOS DA REDAÇÃO
+   ========================================================================== */
+function exibirDadosRedacao(redacao, manifest) {
+  document.getElementById("dadosVazio").style.display = "none";
+  const cont = document.getElementById("dadosConteudo");
+  cont.style.display = "grid";
+
+  const aluno = redacao.aluno || {};
+
+  cont.innerHTML = `
+    <div>
+      <div class="info-label">Nome do Estudante</div>
+      <div class="info-value ${!aluno.nome ? 'muted' : ''}">${escapeHtml(valorOuNaoInformado(aluno.nome))}</div>
+    </div>
+    <div>
+      <div class="info-label">Turma/Grupo</div>
+      <div class="info-value ${!aluno.turma ? 'muted' : ''}">${escapeHtml(valorOuNaoInformado(aluno.turma))}</div>
+    </div>
+    <div class="full">
+      <div class="info-label">Instituição de Ensino</div>
+      <div class="info-value ${!aluno.escola ? 'muted' : ''}">${escapeHtml(valorOuNaoInformado(aluno.escola))}</div>
+    </div>
+    <div class="full">
+      <div class="info-label">Eixo Temático / Proposta Proposta</div>
+      <div class="info-value ${!redacao.tema ? 'muted' : ''}">${escapeHtml(valorOuNaoInformado(redacao.tema))}</div>
+    </div>
+    <div>
+      <div class="info-label">Identificador Único (ID)</div>
+      <div class="info-value" style="font-family:monospace; font-size:12px;">${escapeHtml(valorOuNaoInformado(redacao.idRedacao || manifest.idRedacao))}</div>
+    </div>
+    <div>
+      <div class="info-label">Data de Submissão</div>
+      <div class="info-value">${escapeHtml(formatarData(redacao.dataEnvio))}</div>
+    </div>
+    <div class="full">
+      <div class="info-label">Criptografia / Hash de Verificação</div>
+      <div class="info-value ${!redacao.textHash ? 'muted' : ''}" style="font-size:12px; font-family:monospace; color:var(--brown);">${escapeHtml(valorOuNaoInformado(redacao.textHash))}</div>
+    </div>
+  `;
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* ==========================================================================
+   EXIBIÇÃO DO PDF
+   ========================================================================== */
+function exibirPdf(url) {
+  document.getElementById("pdfVazio").style.display = "none";
+  document.getElementById("pdfWrap").style.display = "block";
+  document.getElementById("pdfBtnRow").style.display = "flex";
+  document.getElementById("pdfFrame").src = url;
+}
+
+/* ==========================================================================
+   FORMULÁRIO DE CORREÇÃO
+   ========================================================================== */
+function montarFormularioCorrecao() {
+  const container = document.getElementById("competenciasContainer");
+  container.innerHTML = "";
+
+  COMPETENCIAS_META.forEach(function (comp) {
+    const div = document.createElement("div");
+    div.className = "competencia";
+    div.innerHTML = `
+      <div class="competencia-header">
+        <span class="titulo">${comp.titulo}</span>
+        <input type="number" class="comp-nota" data-codigo="${comp.codigo}" min="0" max="200" value="0">
+      </div>
+      <textarea class="comp-comentario" data-codigo="${comp.codigo}" placeholder="Análise técnica e desvios pontuais sobre a ${comp.titulo.toLowerCase()}..."></textarea>
+    `;
+    container.appendChild(div);
+  });
+
+  container.querySelectorAll(".comp-nota").forEach(function (input) {
+    input.addEventListener("input", function () {
+      clampNota(input, 0, 200);
+      recalcularNotaFinal();
+      atualizarMensagemWhatsapp();
+    });
+  });
+  container.querySelectorAll(".comp-comentario").forEach(function (ta) {
+    ta.addEventListener("input", atualizarMensagemWhatsapp);
+  });
+
+  document.getElementById("notaFinal").addEventListener("input", function () {
+    clampNota(document.getElementById("notaFinal"), 0, 1000);
+    atualizarMensagemWhatsapp();
+  });
+  document.getElementById("profNome").addEventListener("input", atualizarMensagemWhatsapp);
+  document.getElementById("comentarioGeral").addEventListener("input", atualizarMensagemWhatsapp);
+
+  recalcularNotaFinal();
+}
+
+function clampNota(input, min, max) {
+  let v = parseInt(input.value, 10);
+  if (isNaN(v)) v = min;
+  if (v < min) v = min;
+  if (v > max) v = max;
+  input.value = v;
+}
+
+function recalcularNotaFinal() {
+  const notas = document.querySelectorAll(".comp-nota");
+  let soma = 0;
+  notas.forEach(function (n) {
+    soma += parseInt(n.value, 10) || 0;
+  });
+  document.getElementById("notaFinal").value = soma;
+}
+
+/* ==========================================================================
+   MENSAGEM PARA WHATSAPP
+   ========================================================================== */
+function gerarMensagemWhatsapp() {
+  const redacao = estado.redacao || {};
+  const aluno = redacao.aluno || {};
+  const nomeAluno = valorOuNaoInformado(aluno.nome);
+  const tema = valorOuNaoInformado(redacao.tema);
+  const notaFinal = document.getElementById("notaFinal") ? document.getElementById("notaFinal").value : "0";
+  const comentarioGeral = document.getElementById("comentarioGeral") ? document.getElementById("comentarioGeral").value : "";
+
+  let linhas = [];
+  linhas.push("RELATÓRIO DE CORREÇÃO PRODUZAÊ");
+  linhas.push("==================================");
+  linhas.push("Aluno: " + nomeAluno);
+  linhas.push("Tema: " + tema);
+  linhas.push("==================================");
+  linhas.push("NOTA FINAL: " + notaFinal + " / 1000 Pontos");
+  linhas.push("==================================");
+
+  COMPETENCIAS_META.forEach(function (comp) {
+    const notaInput = document.querySelector('.comp-nota[data-codigo="' + comp.codigo + '"]');
+    const comentInput = document.querySelector('.comp-comentario[data-codigo="' + comp.codigo + '"]');
+    const nota = notaInput ? notaInput.value : "0";
+    const coment = comentInput ? comentInput.value : "";
+    linhas.push(comp.titulo + " — " + nota + " / 200");
+    linhas.push("Feedback: " + (coment || "Sem observações específicas adicionais."));
+    linhas.push("");
+  });
+
+  linhas.push("COMENTÁRIO DIRETIVO GERAL:");
+  linhas.push(comentarioGeral || "Parabéns pelo empenho! Continue produzindo e evoluindo na escrita.");
+
+  return linhas.join("\n");
+}
+
+function atualizarMensagemWhatsapp() {
+  if (!estado.arquivoValido) return;
+  const msg = gerarMensagemWhatsapp();
+  document.getElementById("whatsPreview").textContent = msg;
+}
+
+/* ==========================================================================
+   GERAÇÃO DO PACOTE DE RETORNO JSON
+   ========================================================================== */
+function gerarCorrecaoJson() {
+  const redacao = estado.redacao || {};
+  const profNome = document.getElementById("profNome").value.trim();
+  const notaFinal = parseInt(document.getElementById("notaFinal").value, 10) || 0;
+  const comentarioGeral = document.getElementById("comentarioGeral").value;
+
+  const competencias = COMPETENCIAS_META.map(function (comp) {
+    const notaInput = document.querySelector('.comp-nota[data-codigo="' + comp.codigo + '"]');
+    const comentInput = document.querySelector('.comp-comentario[data-codigo="' + comp.codigo + '"]');
+    return {
+      codigo: comp.codigo,
+      titulo: comp.titulo,
+      nota: parseInt(notaInput.value, 10) || 0,
+      comentario: comentInput.value || ""
+    };
+  });
+
+  return {
+    idRedacao: redacao.idRedacao || estado.manifest.idRedacao,
+    idCorrecao: "corr_" + gerarUUID(),
+    status: "corrigida",
+    professor: profNome,
+    dataCorrecao: new Date().toISOString(),
+    notaFinal: notaFinal,
+    competencias: competencias,
+    comentarioGeral: comentarioGeral || "",
+    textHash: redacao.textHash || ""
+  };
+}
+
+function validarAntesDeExportar() {
+  const erros = [];
+
+  if (!estado.arquivoValido) {
+    erros.push("Nenhuma redação ativa foi identificada no painel de controle.");
+    return erros;
+  }
+
+  const notaFinalInput = document.getElementById("notaFinal");
+  const notaFinal = parseInt(notaFinalInput.value, 10);
+  if (isNaN(notaFinal)) {
+    erros.push("A consolidação da nota final é obrigatória.");
+  } else if (notaFinal < 0 || notaFinal > 1000) {
+    erros.push("A nota final unificada precisa estar entre os parâmetros de 0 e 1000.");
+  }
+
+  document.querySelectorAll(".comp-nota").forEach(function (input) {
+    const v = parseInt(input.value, 10);
+    if (isNaN(v) || v < 0 || v > 200) {
+      erros.push("Todas as subcompetências exigem pontuações normativas entre 0 e 200.");
+    }
+  });
+
+  return erros;
+}
+
+/* ==========================================================================
+   DOWNLOADS E EXPORTAÇÕES
+   ========================================================================= */
+function baixarBlob(blob, nomeArquivo) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = nomeArquivo;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+}
+
+function baixarPdfOriginal() {
+  if (!estado.pdfBlob) return;
+  const idRedacao = (estado.redacao && estado.redacao.idRedacao) || (estado.manifest && estado.manifest.idRedacao) || "redacao";
+  baixarBlob(estado.pdfBlob, "redacao_original_" + idRedacao + ".pdf");
+}
+
+function baixarTxtCorrecao() {
+  const idRedacao = (estado.redacao && estado.redacao.idRedacao) || (estado.manifest && estado.manifest.idRedacao) || "redacao";
+  const msg = gerarMensagemWhatsapp();
+  const blob = new Blob([msg], { type: "text/plain;charset=utf-8" });
+  baixarBlob(blob, "correcao_" + idRedacao + ".txt");
+}
+
+async function copiarParaWhatsapp() {
+  const msg = gerarMensagemWhatsapp();
+  try {
+    await navigator.clipboard.writeText(msg);
+    exibirMensagemExport("Copiado com sucesso! Pronto para colar no canal do estudante.", "success");
+  } catch (e) {
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = msg;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      if (ok) {
+        exibirMensagemExport("Copiado com sucesso! Pronto para colar no canal do estudante.", "success");
+      } else {
+        exibirMensagemExport("Falha na permissão do sistema operacional. Selecione e copie manualmente da caixa de prévia.", "err");
+      }
+    } catch (e2) {
+      exibirMensagemExport("Falha na permissão do sistema operacional. Selecione e copie manualmente da caixa de prévia.", "err");
+    }
+  }
+}
+
+function exibirMensagemExport(msg, tipo) {
+  const el = document.getElementById("exportMsg");
+  const classe = tipo === "success" ? "alert alert-success" : "alert alert-error";
+  el.innerHTML = '<div class="' + classe + '">' + escapeHtml(msg) + '</div>';
+}
+
+async function gerarProduzaeCorrigido() {
+  const erros = validarAntesDeExportar();
+  if (erros.length > 0) {
+    exibirMensagemExport(erros.join(" "), "err");
+    return;
+  }
+
+  try {
+    const zip = new JSZip();
+    const idRedacao = estado.redacao.idRedacao || estado.manifest.idRedacao;
+    const agoraIso = new Date().toISOString();
+
+    const novoManifest = {
+      tipo: "produzae_redacao",
+      versao: 1,
+      statusArquivo: "corrigida",
+      idRedacao: idRedacao,
+      geradoPor: "Produzaê Corretor",
+      dataExportacao: agoraIso
+    };
+
+    const correcao = gerarCorrecaoJson();
+
+    zip.file("manifest.json", JSON.stringify(novoManifest, null, 2));
+    zip.file("redacao.json", JSON.stringify(estado.redacao, null, 2));
+    zip.file("redacao.pdf", estado.pdfBlob);
+    zip.file("correcao.json", JSON.stringify(correcao, null, 2));
+
+    const blob = await zip.generateAsync({ type: "blob" });
+    baixarBlob(blob, "redacao_corrigida_" + idRedacao + ".produzae");
+
+    exibirMensagemExport("Sucesso! Pacote de dados criptografado gerado e baixado no diretório.", "success");
+  } catch (e) {
+    exibirMensagemExport("Erro crítico ao consolidar estrutura compactada: " + e.message, "err");
+  }
+}
+
+/* ==========================================================================
+   EVENT LISTENERS PRINCIPAIS
+   ========================================================================== */
+document.getElementById("fileInput").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  carregarPacoteProduzae(file);
+});
+
+document.getElementById("btnBaixarPdf").addEventListener("click", baixarPdfOriginal);
+document.getElementById("btnBaixarTxt").addEventListener("click", baixarTxtCorrecao);
+document.getElementById("btnCopiarWhats").addEventListener("click", copiarParaWhatsapp);
+document.getElementById("btnGerarProduzae").addEventListener("click", gerarProduzaeCorrigido);
+</script>
+</body>
+</html>
